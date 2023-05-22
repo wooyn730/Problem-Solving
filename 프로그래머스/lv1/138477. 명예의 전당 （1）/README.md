@@ -1,10 +1,10 @@
 # [unrated] 명예의 전당 (1) - 138477 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/138477) 
+|등급|날짜|풀이|
+|---|---|------|
+|Lv.1|23.05.22|k등 발표 점수 (k명 미만이면 꼴등 점수 발표)|
 
->### 풀이
-
-> k등 발표 점수 (k명 미만이면 꼴등 점수 발표)
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/138477)  
 
 ### 성능 요약
 
