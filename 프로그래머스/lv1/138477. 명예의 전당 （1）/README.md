@@ -2,7 +2,7 @@
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/138477) 
 
-### <span style="color: #2D3748; background-color:#fff5b1;">풀이</span>
+>### 풀이
 
 k등 발표 점수 (k명 미만이면 꼴등 점수 발표)
 
