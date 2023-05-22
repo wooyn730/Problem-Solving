@@ -1,5 +1,9 @@
 # [unrated] 과일 장수 - 135808 
 
+|등급|날짜|풀이|
+|---|---|------|
+|Lv.1|23.05.22|비싼 순서대로 정렬하여 m개씩 담아 판매한다.|
+
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/135808) 
 
 ### 성능 요약
