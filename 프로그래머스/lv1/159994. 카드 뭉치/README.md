@@ -1,5 +1,9 @@
 # [unrated] 카드 뭉치 - 159994 
 
+|등급|날짜|풀이|
+|---|---|------|
+|Lv.1|23.05.22|각 카드뭉치에서 사용할 번호(인덱스)를 기억하고 goal과 비교한다.|
+
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/159994) 
 
 ### 성능 요약
