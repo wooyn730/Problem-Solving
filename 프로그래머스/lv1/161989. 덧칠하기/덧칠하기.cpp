@@ -7,8 +7,6 @@ int solution(int n, int m, vector<int> section) {
     int answer = 0;
     vector<int> tmp;
 
-    //tmp.clear();
-    
     while (1)
     {
         tmp.clear();
