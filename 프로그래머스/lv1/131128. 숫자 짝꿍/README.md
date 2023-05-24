@@ -1,5 +1,9 @@
 # [level 1] 숫자 짝꿍 - 131128 
 
+|등급|날짜|풀이|
+|---|---|------|
+|Lv.1|23.05.24|X와 Y에 있는 숫자들을 vector에 넣어주고 정렬한다<p>인덱스를 하나씩 줄이며 비교해준다.|
+
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/131128) 
 
 ### 성능 요약
