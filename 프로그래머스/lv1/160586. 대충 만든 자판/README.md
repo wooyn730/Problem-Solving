@@ -1,5 +1,9 @@
 # [unrated] 대충 만든 자판 - 160586 
 
+|등급|날짜|풀이|
+|---|---|------|
+|Lv.1|23.05.27|알파벳을 담는 벡터를 만들어 keymap에서 나올 수 있는 최소값을 저장하고 targets에 적용한다.|
+
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/160586) 
 
 ### 성능 요약
