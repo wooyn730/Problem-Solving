@@ -1,6 +1,6 @@
 #include <string>
 #include <vector>
-#include<cstdlib>
+#include <cstdlib>
 
 using namespace std;
 

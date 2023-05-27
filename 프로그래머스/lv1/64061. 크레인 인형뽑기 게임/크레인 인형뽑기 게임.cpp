@@ -28,11 +28,4 @@ int solution(vector<vector<int>> board, vector<int> moves) {
     }
     
     return answer;
-    /*
-    00000
-    00103
-    02501
-    42442
-    35131
-    */
 }
