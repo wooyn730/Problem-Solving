@@ -14,5 +14,5 @@ int solution(string s)
             stack.push(s[i]);
     }
     
-    return stack.empty() ? 1 : 0;
+    return stack.empty();
 }
