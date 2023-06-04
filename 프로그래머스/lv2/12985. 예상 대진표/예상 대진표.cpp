@@ -1,0 +1,29 @@
+#include <cmath> // abs(절댓값), log2(로그)
+#include <algorithm> // swap
+
+using namespace std;
+
+int solution(int n, int a, int b)
+{
+    int answer = 0;
+    
+    for (int i=0; i<log2(n); i++)
+    {
+        answer++;
+        
+        // 작은 수가 홀수, 큰 수가 짝수이면서 1 차이
+        if (a > b)
+            swap(a, b);
+        if (a%2==1 && a+1==b)
+           return answer;
+        
+        if (a%2 != 0)
+            a++;
+        if (b%2 != 0)
+            b++;
+        
+        a /= 2;
+        b /= 2;
+    }
+    
+}
