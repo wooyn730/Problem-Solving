@@ -1,4 +1,3 @@
-#include <cmath> // abs(절댓값), log2(로그)
 #include <algorithm> // swap
 
 using namespace std;
