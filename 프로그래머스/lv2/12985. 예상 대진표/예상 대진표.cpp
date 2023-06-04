@@ -7,7 +7,7 @@ int solution(int n, int a, int b)
 {
     int answer = 0;
     
-    for (int i=0; i<log2(n); i++)
+    while (true)
     {
         answer++;
         
