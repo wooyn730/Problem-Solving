@@ -1,5 +1,12 @@
 # [Silver IV] 30 - 10610 
 
+<p>//////<p>
+1. 마지막 자리가 0이어야함 (10의 배수)<p>
+2. 숫자가 3의 배수여야 함<p>
+3. stoll은 느려서 에러, long long num = stoll(N) 사용 불가 for문 가능<p>
+//////
+
+
 [문제 링크](https://www.acmicpc.net/problem/10610) 
 
 ### 성능 요약
