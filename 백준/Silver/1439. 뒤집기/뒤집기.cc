@@ -10,34 +10,28 @@ int main() {
 
 	int ans = 0;
 	bool toChange = false;
+	char main = S[0];
 
-	do
+
+	for (int i = 1; i < S.length(); i++)
 	{
-		toChange = false;
-		for (int i = 1; i < S.length(); i++)
+		if (!toChange)
 		{
-			if (!toChange)
+			if (S[i] != main)
 			{
-				if (S[i - 1] != S[i])
-				{
-					toChange = true;
-					S[i] = S[i - 1];
-					ans++;
-				}
-			}
-			else
-			{
-				if (S[i] != S[i - 1])
-					S[i] = S[i - 1];
-				else
-					break; // for문 탈출
+				toChange = true;
+				S[i] = main;
+				ans++;
 			}
 		}
-
-		if (!toChange)
-			break; // while문 탈출
-
-	} while (toChange);
+		else
+		{
+			if (S[i] != main)
+				S[i] = main;
+			else
+				toChange = false;
+		}
+	}
 	
 	cout << ans;
 	return 0;
