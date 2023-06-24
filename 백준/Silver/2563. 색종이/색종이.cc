@@ -12,14 +12,17 @@ int main()
 		cin >> a >> b;
 		
 		for (int i = a; i < a + 10; i++)
+		{
 			for (int j = b; j < b + 10; j++)
-				paper[i][j] = 1;
+			{
+				if (!paper[i][j])
+				{
+					paper[i][j] = 1;
+					sum++;
+				}
+			}
+		}
 	}
-
-	for (int i = 0; i < 100; i++)
-		for (int j = 0; j < 100; j++)
-			if (paper[i][j] == 1)
-				sum++;
 
 	cout << sum;
 	return 0;
