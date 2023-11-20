@@ -2,17 +2,18 @@
 #include <cmath>
 using namespace std;
 
-int main() {
+int main(void)
+{
 	ios::sync_with_stdio(false);
-	cin.tie(0), cout.tie(0);
-	
-	long long n;
+	cin.tie(NULL);
+
+	long long n, q;
 	cin >> n;
+	
+	q = sqrt(n);
 
-	long long ans = sqrt(n);
+	if (q * q < n)
+		q += 1;
 
-	if (ans * ans < n)
-		ans++;
-	cout << ans;
-	return 0;
+	cout << q;
 }
