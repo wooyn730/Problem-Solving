@@ -4,13 +4,8 @@
 #include <iostream>
 using namespace std;
 
-bool compare(string &a, string &b)
-{
-    return a < b;
-}
-
 bool solution(vector<string> phone_book) {
-    sort(phone_book.begin(), phone_book.end(), compare);
+    sort(phone_book.begin(), phone_book.end());
 
     for (int i=0; i<phone_book.size()-1; i++)
     {
