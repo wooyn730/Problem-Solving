@@ -10,30 +10,22 @@ int solution(int bridge_length, int weight, vector<int> truck_weights) {
         bridge.push(0);
     
     int time = 0;
+    int truck = 0;
     int bridgeW = 0;
-    for (int i=0; i<truck_weights.size(); i++)
+    while (truck < truck_weights.size() || bridgeW)
     {
         time++;
         bridgeW -= bridge.front();
         bridge.pop();
         
-        if (bridgeW + truck_weights[i] <= weight)
+        if (truck < truck_weights.size() && bridgeW + truck_weights[truck] <= weight)
         {
-            bridge.push(truck_weights[i]);
-            bridgeW += truck_weights[i];
+            bridge.push(truck_weights[truck]);
+            bridgeW += truck_weights[truck];
+            truck++;
         }
         else
-        {
             bridge.push(0);
-            i--;
-        }
-    }
-    
-    while (bridgeW)
-    {
-        time++;
-        bridgeW -= bridge.front();
-        bridge.pop();
     }
     
     return time;
