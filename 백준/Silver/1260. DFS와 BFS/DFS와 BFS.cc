@@ -1,37 +1,24 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-#include <stack>
 #include <queue>
 using namespace std;
 
 vector<int> node[1001];
 bool visit[1001];
 
-void DFS(int start)
+void DFS(int now)
 {
-	stack<int> s;
-	visit[start] = true;
-	s.push(start);
-	cout << start << " ";
+	visit[now] = true;
+	cout << now << " ";
 
-	while (!s.empty())
+	for (int i = 0; i < node[now].size(); i++)
 	{
-		int now = s.top();
-		s.pop();
+		int next = node[now][i];
 
-		for (int i = 0; i < node[now].size(); i++)
+		if (!visit[next])
 		{
-			int next = node[now][i];
-
-			if (!visit[next])
-			{
-				visit[next] = true;
-				s.push(now);
-				s.push(next);
-				cout << next << " ";
-				break;
-			}
+			DFS(next);
 		}
 	}
 }
