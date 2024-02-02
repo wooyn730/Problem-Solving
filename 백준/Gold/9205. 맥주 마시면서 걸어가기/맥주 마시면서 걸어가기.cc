@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include <queue>
+#include <stack>
 using namespace std;
 
 int main(void)
@@ -15,8 +15,6 @@ int main(void)
 	{
 		cin >> n;
 
-		// 집, 편의점, 축제 가능하면 모두 잇는다
-		// 집과 축제가 이어지는지 bfs/dfs로 찾기
 		vector<pair<int, int>> stuff;
 
 		for (int i = 0; i < n + 2; i++)
@@ -39,7 +37,6 @@ int main(void)
 
 				if (dis <= 1000)
 				{
-					// 연결을 어떻게? stuff의 인덱스로
 					link[i].push_back(j);
 					link[j].push_back(i);
 				}
@@ -47,14 +44,14 @@ int main(void)
 		}
 
 		bool isHappy = false;
-		queue<pair<pair<int, int>, int>> q;
+		stack<pair<pair<int, int>, int>> q;
 		q.push({ {stuff[0].first, stuff[0].second }, 0 });
 		visit[0] = true;
 		while (!q.empty())
 		{
-			int x = q.front().first.first;
-			int y = q.front().first.second;
-			int idx = q.front().second;
+			int x = q.top().first.first;
+			int y = q.top().first.second;
+			int idx = q.top().second;
 			q.pop();
 
 			if (x == stuff[stuff.size() - 1].first && y == stuff[stuff.size() - 1].second)
@@ -71,8 +68,10 @@ int main(void)
 
 				if (!visit[nidx])
 				{
+					q.push({ {x, y}, idx });
 					q.push({ {nx, ny}, nidx });
 					visit[nidx] = true;
+					break;
 				}
 			}
 		}
