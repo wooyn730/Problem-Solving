@@ -33,7 +33,6 @@ void BFS(int i)
 
 int solution(int n, vector<vector<int>> computers) {
 
-    
     for (int i=0; i<computers.size(); i++)
     {
         for (int j=0; j<n-1; j++)
