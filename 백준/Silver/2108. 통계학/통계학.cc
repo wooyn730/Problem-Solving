@@ -25,7 +25,7 @@ int main() {
 
     sort(nums, nums + N);
 
-    int avg = (int)round(sum / N);
+    int avg = round(sum / N);
     int mid = nums[N / 2];
 
     int mx = 0, idx1 = -1, idx2 = -1;
