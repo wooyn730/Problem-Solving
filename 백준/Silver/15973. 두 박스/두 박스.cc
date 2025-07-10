@@ -21,7 +21,8 @@ int main() {
         cout << "POINT";
     else if (x1 == x4 || x2 == x3 || y1 == y4 || y2 == y3)
         cout << "LINE";
+    else
+        cout << "FACE";
     
-
     return 0;
 }
