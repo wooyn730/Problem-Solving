@@ -1,40 +1,44 @@
 #include <iostream>
-#include <queue>
+#include <string>
+#include <cmath>
+#include <algorithm>
 #include <vector>
+#include <queue>
 using namespace std;
 
-int main(void)
-{
-	ios::sync_with_stdio(false);
-	cin.tie(NULL);
+queue<int> nums;
+int ans[5001];
+int cnt;
 
-	int N, K;
-	cin >> N >> K;
-	queue<int> que;
-	vector<int> jose;
-	
-	for (int i = 1; i <= N; i++)
-		que.push(i);
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
 
-	while (!que.empty())
-	{
-		for (int i = 1; i <= K; i++)
-		{
-			if (i == K)
-				jose.push_back(que.front());
-			else
-				que.push(que.front());
+    int N, K;
+    cin >> N >> K;
 
-			que.pop();
-		}
-	}
+    for (int i = 1; i <= N; i++)
+        nums.push(i);
 
-	cout << "<";
-	for (int i = 0; i < jose.size(); i++)
-	{
-		cout << jose[i];
-		if (i != jose.size() - 1)
-			cout << ", ";
-	}
-	cout << ">";
+    while (!nums.empty())
+    {
+        for (int i = 0; i < K - 1; i++)
+        {
+            nums.push(nums.front());
+            nums.pop();
+        }
+        ans[cnt++] = nums.front();
+        nums.pop();
+    }
+
+    cout << "<";
+    for (int i = 0; i < N; i++)
+    {
+        cout << ans[i];
+        if (i != N - 1)
+            cout << ", ";
+    }
+    cout << ">";
+
+    return 0;
 }
