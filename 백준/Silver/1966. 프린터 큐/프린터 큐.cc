@@ -1,64 +1,55 @@
 #include <iostream>
 #include <queue>
-#include <map>
+#include <vector>
 #include <algorithm>
 using namespace std;
 
-int main(void)
-{
-	ios::sync_with_stdio(false);
-	cin.tie(NULL);
+int priority[101];
 
-	int T;
-	cin >> T;
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
 
-	while (T--)
-	{
-		queue<pair<int, bool>> printer;
-		map<int, int, greater<int>> file;
-		int N, M, num, cnt = 0;
-		cin >> N >> M;
+    int T;
+    cin >> T;
 
-		for (int i = 0; i < N; i++)
-		{
-			cin >> num;
+    while (T--)
+    {
+        int N, M;
+        cin >> N >> M;
 
-			if (i != M)
-				printer.push(make_pair(num, false));
-			else
-				printer.push(make_pair(num, true));
+        queue<pair<int, int>> docs;
+        queue<int> prior;
 
-			if (file.find(num) != file.end())
-				file[num]++;
-			else
-				file.insert({ num, 1 });
-		}
+        for (int i = 0; i < N; i++)
+        {
+            cin >> priority[i];
+            docs.push({ i, priority[i] });
+        }
 
-		bool isFind = false;
-		for (auto iter = file.begin(); iter != file.end(); iter++)
-		{
-			while (iter->second > 0)
-			{
-				if (printer.front().first == iter->first)
-				{
-					cnt++;
-					iter->second = iter->second - 1;
-					if (printer.front().second)
-					{
-						isFind = true;
-						break;
-					}
-				}
-				else
-				{
-					printer.push(printer.front());
-				}
-				printer.pop();
-			}
+        sort(priority, priority + N, greater<int>());
+        for (int i = 0; i < N; i++)
+        {
+            prior.push(priority[i]);
+        }
 
-			if (isFind)
-				break;
-		}
-		cout << cnt << "\n";
-	}
+        int cnt = 0;
+        while (!docs.empty())
+        {
+            if (docs.front().second == prior.front())
+            {
+                cnt++;
+                if (docs.front().first == M)
+                    break;
+                prior.pop();
+            }
+            else
+            {
+                docs.push(docs.front());
+            }
+            docs.pop();
+        }
+        cout << cnt << "\n";
+    }
+    return 0;
 }
