@@ -1,27 +1,29 @@
+#include<iostream>
 #include <iostream>
-#include <string>
-#include <set>
+#include <vector>
+#include<algorithm>
 using namespace std;
 
-int main()
-{
-	ios::sync_with_stdio(false);
-	cin.tie(NULL);
+vector<string> s;
 
-	set<string> set;
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
 
-	string S;
-	cin >> S;
+    string S;
+    cin >> S;
 
-	for (int i = 0; i < S.length(); i++)
-	{
-		for (int j = 0; j < S.length(); j++)
-		{
-			string str = S.substr(i, j);
-			set.insert(str);
-		}
-	}
+    for (int i = 0; i < S.length(); i++)
+    {
+        for (int j = 1; j <= S.length() - i; j++)
+        {
+            s.push_back(S.substr(i, j));
+        }
+    }
 
-	cout << set.size();
-	return 0;
+    sort(s.begin(), s.end());
+    s.erase(unique(s.begin(), s.end()), s.end());
+
+    cout << s.size();
+    return 0;
 }
