@@ -1,36 +1,35 @@
 #include <iostream>
-#include <string>
-#include <map>
+#include <iostream>
+#include <vector>
 #include <algorithm>
+#include <unordered_set>
 using namespace std;
 
-int main()
-{
-	ios::sync_with_stdio(false);
-	cin.tie(NULL);
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
 
-	map<string, bool> S;
-	int N, M, cnt = 0;
-	cin >> N >> M;
+    int N, M;
+    cin >> N >> M;
 
-	while (N--)
-	{
-		string str;
-		cin >> str;
+    unordered_set<string> S;
+    while (N--)
+    {
+        string s;
+        cin >> s;
+        S.insert(s);
+    }
 
-		S[str] = true;
-	}
+    int cnt = 0;
+    while (M--)
+    {
+        string s;
+        cin >> s;
 
-	while (M--)
-	{
-		string input;
-		cin >> input;
+        if (S.find(s) != S.end())
+            cnt++;
+    }
 
-		if (S[input])
-			cnt++;
-	}
-	
-	cout << cnt;
-
-	return 0;
+    cout << cnt;
+    return 0;
 }
