@@ -1,43 +1,48 @@
 #include <iostream>
 #include <queue>
-#include <cmath>
+#include<cmath>
 using namespace std;
 
-struct compare {
-	bool operator()(pair<int, int>& a, pair<int, int>& b)
-	{
-		if (a.first == b.first)
-			return a.second > b.second;
-		return a.first > b.first;
-	}
+struct cmp
+{
+    bool operator()(int a, int b)
+    {
+        if (abs(a) == abs(b))
+            return a > b;
+        else
+            return abs(a) > abs(b);
+    }
 };
 
-int main(void)
-{
-	ios::sync_with_stdio(false);
-	cin.tie(NULL);
-	
-	priority_queue<pair<int, int>, vector<pair<int, int>>, compare> pq;
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
 
-	int N, x;
-	cin >> N;
+    int N;
+    cin >> N;
 
-	while (N--)
-	{
-		cin >> x;
-		if (x == 0)
-		{
-			if (pq.empty())
-				cout << "0\n";
-			else
-			{
-				cout << pq.top().second << "\n";
-				pq.pop();
-			}
-		}
-		else
-		{
-			pq.push(make_pair(abs(x), x));
-		}
-	}
+    priority_queue<int, vector<int>, cmp> pq;
+    for (int i = 0; i < N; i++)
+    {
+        int x;
+        cin >> x;
+        if (x == 0)
+        {
+            if (pq.size() == 0)
+            {
+                cout << 0 << "\n";
+            }
+            else
+            {
+                cout << pq.top() << "\n";
+                pq.pop();
+            }
+        }
+        else
+        {
+            pq.push(x);
+        }
+    }
+
+    return 0;
 }
